@@ -11,6 +11,7 @@ void get_Data(char str_Trans[]);
 
 float val_Amoni = 20.256;
 float val_Sulfur = 12.3456;
+//data tran from stm -> esp
 float NH3;
 float SO2;
 char Data[leng];
@@ -36,7 +37,6 @@ void task4_UART(void)
 	sprintf(str_Data_Sulfur,"\"SulfurDioxit\":\"%0.2f\"}", val_Sulfur);
 	strcat(str_Data, str_Data_Amoni);
 	strcat(str_Data, str_Data_Sulfur);
-    //printf("%s",str_Data);
 	strcpy(Data,str_Data);
 	printf("%s",Data);
 	//{"Amoniac":"20.26","SulfurDioxit":"12.35"}
@@ -89,7 +89,6 @@ void get_Data(char str_Trans[])
 	printf("\nSO2: %s",char_Sulfur);
 	NH3 = charTofloat(char_Amoni);
 	SO2 = charTofloat(char_Sulfur);
-
 }
 
 float charTofloat(char chuoi[])
